@@ -19,11 +19,11 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'KKRaman-docs'
+project = 'KKRaman Docs'
 copyright = '2023, Kothandaraman Kannadasan'
 author = 'Kothandaraman Kannadasan'
 
-# The short X.Y version
+# The short X.Y versiony
 version = ''
 # The full version, including alpha/beta/rc tags
 release = '0.1'
@@ -38,8 +38,10 @@ release = '0.1'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
-]
+# extensions = ['sphinx_rtd_theme']
+extensions = []
+# extensions = [
+# ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
