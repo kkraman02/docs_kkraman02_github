@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; KKRaman Docs 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../../_static/jquery.js"></script>
+        <script type="text/javascript" src="../../_static/underscore.js"></script>
+        <script type="text/javascript" src="../../_static/doctools.js"></script>
+        <script type="text/javascript" src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> KKRaman Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Profile</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../about_me/index.html">About Me</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about_me/education/index.html">Education</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../about_me/education/index.html#master-degree-2020-2022">Master Degree (2020 - 2022)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../about_me/education/index.html#bachelor-degree-2015-2019">Bachelor Degree (2015 - 2019)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Professional History</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../software_engineer/index.html">Software Engineer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_engineer/index.html#qqqqqqqqqq">qqqqqqqqqq</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software_product_manager/index.html">Software Product Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software_product_manager/index.html#qqqqqqqqqq">qqqqqqqqqq</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">KKRaman Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/Demo_11/Demo_1/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<span id="nlib-installation"></span><h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>There are two ways to install Neuron Library.</p>
+<ul class="simple">
+<li><p>Install from APT repository</p></li>
+<li><p>Build from source code</p></li>
+</ul>
+<div class="section" id="install-from-apt-repository">
+<h2>Install from APT repository<a class="headerlink" href="#install-from-apt-repository" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Setup ADLINK APT repository (Only intel-based system is needed, e.g. ROScube-I)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install curl
+curl -L --insecure https://neuron.adlinktech.com/debian/repo_signing.key <span class="p">|</span> sudo apt-key add -
+<span class="nb">echo</span> <span class="s1">&#39;Acquire::https::neuron.adlinktech.com::Verify-Peer &quot;false&quot;;&#39;</span> <span class="p">|</span> sudo tee /etc/apt/apt.conf.d/99roscube &gt; /dev/null
+<span class="nb">echo</span> <span class="s1">&#39;Acquire::https::neuron.adlinktech.com::Verify-Host &quot;false&quot;;&#39;</span> <span class="p">|</span> sudo tee -a /etc/apt/apt.conf.d/99roscube &gt; /dev/null
+<span class="nb">echo</span> <span class="s2">&quot;deb [arch=</span><span class="k">$(</span>dpkg --print-architecture<span class="k">)</span><span class="s2">] https://neuron.adlinktech.com/debian/common </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> main&quot;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/roscube.list &gt; /dev/null
+sudo apt update
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you use NVIDIA series platform (e.g. ROScube-X / ROScube Pico),
+the APT repository has already been set up in the BSP provided by ADLINK.</p>
+</div>
+<ul class="simple">
+<li><p>Install Neuron Library from ADLINK APT repository</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install neuron-library
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>After installation, the Neuron Library will be located in <code class="docutils literal notranslate"><span class="pre">/opt/adlink/neuron-sdk/neuron-library/</span></code>.</p></li>
+<li><p>Reboot the system and then you can use Neuron Library without root privilege.</p></li>
+</ul>
+</div>
+<div class="section" id="build-from-source-code">
+<h2>Build from source code<a class="headerlink" href="#build-from-source-code" title="Permalink to this headline">¶</a></h2>
+<p>You can also build Neuron Library from source code.
+The source code of Neuron Library can be found at <a class="reference external" href="https://github.com/Adlink-ROS/mraa">https://github.com/Adlink-ROS/mraa</a>, and include usage examples and detailed information of the latest version.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2023, Kothandaraman Kannadasan
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
