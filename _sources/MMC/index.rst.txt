@@ -1,0 +1,7 @@
+.. _BMC:
+
+MMC
+===
+
+Abbrevation
+-----------
