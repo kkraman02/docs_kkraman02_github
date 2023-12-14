@@ -16,16 +16,21 @@ Please refer to different sections based on your interest.
    about_me/index.rst
 
 .. toctree::
-   :caption: Professional History
+   :caption: EDKII
 
-   software_engineer/index.rst
-   software_product_manager/index.rst
-
-.. toctree::
-   :caption: ARM System
-
-..   Demo_11/index.rst
-..   Demo_22/index.rst
+   EDKII/index.rst
 
 .. toctree::
-   :caption: X86 System
+   :caption: BMC
+
+   BMC/index.rst
+
+.. toctree::
+   :caption: MMC
+
+   MMC/index.rst
+
+.. toctree::
+   :caption: Blogs
+
+   blogs/index.rst
