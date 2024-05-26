@@ -1,7 +1,7 @@
 ---
-title: Hello World
+title: Building Yocto for NXP
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+In this guide you will get to know how to build the Yocto for NXP products based on Scarthgap branch.
 
 ## Quick Start
 
