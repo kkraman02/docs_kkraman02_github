@@ -2,7 +2,7 @@
 title: Yocto Project Development
 ---
 
-### Definitions
+### Definitions:
 
 Terminology in the Yocto Project can be a little confusing. These definitions should help you along the way:
 
