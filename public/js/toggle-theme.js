@@ -26,18 +26,6 @@ KEEP.initModeToggle = () => {
     },
 
     initModeStatus() {
-      const configMode = KEEP.theme_config?.base_info?.mode
-
-      if (configMode === 'dark') {
-        this.enableDarkMode()
-        return
-      }
-
-      if (configMode === 'light') {
-        this.enableLightMode()
-        return
-      }
-
       const styleStatus = KEEP.getStyleStatus()
 
       if (styleStatus) {
