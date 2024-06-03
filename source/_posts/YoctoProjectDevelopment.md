@@ -1,7 +1,6 @@
 ---
 title: Yocto Project Development
 ---
-
 ### Definitions
 
 Terminology in the Yocto Project can be a little confusing. These definitions should help you along the way:
@@ -19,4 +18,3 @@ Terminology in the Yocto Project can be a little confusing. These definitions sh
 ### Block Diagram
 
 ![](YoctoProjectDevelopment.assets/YoctoBlockDiagram.png)
-

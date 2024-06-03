@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>OpenBMC Development</title>
+    <url>/2024/06/03/OpenBMCDevelopment/</url>
+    <content><![CDATA[<h2 id="1-Setting-up-the-system-for-the-OpenBMC-development"><a href="#1-Setting-up-the-system-for-the-OpenBMC-development" class="headerlink" title="1. Setting up the system for the OpenBMC development"></a>1. Setting up the system for the OpenBMC development</h2><ul>
+<li><p>Install the following dependencies</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install git python3-distutils gcc g++ make file wget gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2</span><br></pre></td></tr></table></figure></li>
+<li><p>Download the source code</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bcran/openbmc</span><br><span class="line"><span class="built_in">cd</span> openbmc</span><br></pre></td></tr></table></figure></li>
+<li><p>Choose your machine</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">. setup comhpcalt</span><br></pre></td></tr></table></figure></li>
+<li><p>start to buid the firmware</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bitbake obmc-phosphor-image</span><br></pre></td></tr></table></figure></li>
+<li><p>Once the build is completed, the BMC image will be created and stored in this location <code>tmp/deploy/images/&lt;platform&gt;/</code></p>
+<ul>
+<li><code>obmc-phosphor-image-&lt;platform&gt;-&lt;datetime&gt;.static.mtd</code> and <code>obmc-phosphor-image-&lt;platform&gt;-&lt;datetime&gt;.static.mtd.tar</code></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>openbmc</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Yocto Project Development</title>
-    <url>/2024/05/29/YoctoProjectDevelopment/</url>
+    <url>/2024/06/03/YoctoProjectDevelopment/</url>
     <content><![CDATA[<h3 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h3><p>Terminology in the Yocto Project can be a little confusing. These definitions should help you along the way:</p>
 <ul>
 <li><strong>OpenEmbedded</strong>: build system and community</li>
@@ -20,7 +43,7 @@
   </entry>
   <entry>
     <title>Building Yocto for NXP</title>
-    <url>/2024/05/25/hello-world/</url>
+    <url>/2024/06/03/hello-world/</url>
     <content><![CDATA[<p>In this guide you will get to know how to build the Yocto for NXP products based on Scarthgap branch.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
