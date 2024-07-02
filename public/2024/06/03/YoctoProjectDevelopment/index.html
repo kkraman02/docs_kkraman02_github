@@ -9,7 +9,7 @@
     
     <title>
         
-            OpenBMC Development |
+            Yocto Project Development |
         
         Makes Sense
     </title>
@@ -236,7 +236,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        OpenBMC Development
+                        Yocto Project Development
                     </div>
                 
 
@@ -264,26 +264,17 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-06-03 11:45:03</span>
+                <span class="datetime">2024-06-03 11:16:32</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Jun 03 2024 12:08:51 GMT+0800">2024-06-03 12:08:51</span>
+                <span class="datetime" data-updated="Mon Jun 03 2024 11:43:23 GMT+0800">2024-06-03 11:43:23</span>
             </span>
         
 
         
 
-        
-            <span class="post-tag meta-info-item border-box">
-                <ul class="post-tag-ul">
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="../../../../tags/openbmc/">openbmc</a></li>
-                        
-                    
-                </ul>
-            </span>
         
 
         
@@ -307,35 +298,25 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <h2 id="1-Setting-up-the-system-for-the-OpenBMC-development"><a href="#1-Setting-up-the-system-for-the-OpenBMC-development" class="headerlink" title="1. Setting up the system for the OpenBMC development"></a>1. Setting up the system for the OpenBMC development</h2><ul>
-<li><p>Install the following dependencies</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install git python3-distutils gcc g++ make file wget gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2</span><br></pre></td></tr></table></figure></li>
-<li><p>Download the source code</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bcran/openbmc</span><br><span class="line"><span class="built_in">cd</span> openbmc</span><br></pre></td></tr></table></figure></li>
-<li><p>Choose your machine</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. setup comhpcalt</span><br></pre></td></tr></table></figure></li>
-<li><p>start to buid the firmware</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bitbake obmc-phosphor-image</span><br></pre></td></tr></table></figure></li>
-<li><p>Once the build is completed, the BMC image will be created and stored in this location <code>tmp/deploy/images/&lt;platform&gt;/</code></p>
+                    <h3 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h3><p>Terminology in the Yocto Project can be a little confusing. These definitions should help you along the way:</p>
 <ul>
-<li><code>obmc-phosphor-image-&lt;platform&gt;-&lt;datetime&gt;.static.mtd</code> and <code>obmc-phosphor-image-&lt;platform&gt;-&lt;datetime&gt;.static.mtd.tar</code></li>
+<li><strong>OpenEmbedded</strong>: build system and community</li>
+<li><strong>The Yocto Project</strong>: umbrella project and community</li>
+<li><strong>Metadata</strong>: files containing information about how to build an image</li>
+<li><strong>Recipe</strong>: file with instructions to build one or more packages</li>
+<li><strong>Layer</strong>: directory containing grouped metadata (start with “meta-”)</li>
+<li><strong>Board support package (BSP)</strong>: layer that defines how to build for board (usually maintained by vendor)</li>
+<li><strong>Distribution</strong>: specific implementation of Linux (kernel version, rootfs, etc.)</li>
+<li><strong>Machine</strong>: defines the architecture, pins, buses, BSP, etc.</li>
+<li><strong>Image</strong>: output of build process (bootable and executable Linux OS)</li>
 </ul>
-</li>
-</ul>
+<h3 id="Block-Diagram"><a href="#Block-Diagram" class="headerlink" title="Block Diagram"></a>Block Diagram</h3><p><img   src="YoctoProjectDevelopment.assets/YoctoBlockDiagram.png" ></p>
 
                 </div>
                 
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
-                        
-                            <ul class="post-tags-box border-box">
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="../../../../tags/openbmc/">openbmc</a>
-                                    </li>
-                                
-                            </ul>
                         
                     </div>
                     <div>
@@ -351,35 +332,19 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="../../04/Bitbake-Environment/"
-                                   title="Bitbake Environment"
+                                   href="../OpenBMCDevelopment/"
+                                   title="OpenBMC Development"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Bitbake Environment</span>
+                                        <span class="post-nav-title-item text-ellipsis">OpenBMC Development</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
                             </div>
                         
-                        
-                            <div class="next-post">
-                                <a class="next"
-                                   rel="next"
-                                   href="../YoctoProjectDevelopment/"
-                                   title="Yocto Project Development"
-                                >
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Yocto Project Development</span>
-                                        <span class="post-nav-item">Next posts</span>
-                                    </span>
-                                    <span class="right arrow-icon flex-center">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </span>
-                                </a>
-                            </div>
                         
                     </div>
                 
@@ -401,7 +366,7 @@
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
         <!-- use hexo-blog-encrypt -->
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Setting-up-the-system-for-the-OpenBMC-development"><span class="nav-number">1.</span> <span class="nav-text">1. Setting up the system for the OpenBMC development</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-Diagram"><span class="nav-number">2.</span> <span class="nav-text">Block Diagram</span></a></li></ol>
     </div>
 </div>
 
@@ -571,7 +536,7 @@
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
         <!-- use hexo-blog-encrypt -->
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Setting-up-the-system-for-the-OpenBMC-development"><span class="nav-number">1.</span> <span class="nav-text">1. Setting up the system for the OpenBMC development</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-Diagram"><span class="nav-number">2.</span> <span class="nav-text">Block Diagram</span></a></li></ol>
     </div>
 </div>
 
