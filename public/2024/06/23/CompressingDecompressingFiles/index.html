@@ -9,7 +9,7 @@
     
     <title>
         
-            Yocto Project Development |
+            Compressing &amp;  Decompressing Files |
         
         Makes Sense
     </title>
@@ -236,7 +236,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Yocto Project Development
+                        Compressing &amp;  Decompressing Files
                     </div>
                 
 
@@ -264,12 +264,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2024-06-03 11:16:32</span>
+                <span class="datetime">2024-06-23 01:27:22</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Jun 03 2024 11:43:23 GMT+0800">2024-06-03 11:43:23</span>
+                <span class="datetime" data-updated="Sun Jun 23 2024 01:44:38 GMT+0800">2024-06-23 01:44:38</span>
             </span>
         
 
@@ -298,20 +298,15 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <h3 id="Definitions"><a href="#Definitions" class="headerlink" title="Definitions"></a>Definitions</h3><p>Terminology in the Yocto Project can be a little confusing. These definitions should help you along the way:</p>
-<ul>
-<li><strong>OpenEmbedded</strong>: build system and community</li>
-<li><strong>The Yocto Project</strong>: umbrella project and community</li>
-<li><strong>Metadata</strong>: files containing information about how to build an image</li>
-<li><strong>Recipe</strong>: file with instructions to build one or more packages</li>
-<li><strong>Layer</strong>: directory containing grouped metadata (start with “meta-”)</li>
-<li><strong>Board support package (BSP)</strong>: layer that defines how to build for board (usually maintained by vendor)</li>
-<li><strong>Distribution</strong>: specific implementation of Linux (kernel version, rootfs, etc.)</li>
-<li><strong>Machine</strong>: defines the architecture, pins, buses, BSP, etc.</li>
-<li><strong>Image</strong>: output of build process (bootable and executable Linux OS)</li>
-</ul>
-<h3 id="Block-Diagram"><a href="#Block-Diagram" class="headerlink" title="Block Diagram"></a>Block Diagram</h3><p><img   src="YoctoProjectDevelopment.assets/YoctoBlockDiagram.png" ></p>
+                    <p>Decompressing .tar.gz and .tar.xz files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install tar</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf &lt;file_name&gt;.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>Decompressing .zst files</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zstd</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zst -d &lt;file_name&gt;.zst</span><br></pre></td></tr></table></figure>
                 </div>
                 
 
@@ -332,19 +327,35 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="../hello-world/"
-                                   title="Building Yocto for NXP"
+                                   href="../ChangingOwnershipLinux/"
+                                   title="Changing Ownership in Linux"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Building Yocto for NXP</span>
+                                        <span class="post-nav-title-item text-ellipsis">Changing Ownership in Linux</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
                             </div>
                         
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="../FlashingOSUsingDDUtilityLinux/"
+                                   title="Flashing OS Using DD Utility in Linux"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">Flashing OS Using DD Utility in Linux</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         
                     </div>
                 
@@ -366,7 +377,7 @@
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
         <!-- use hexo-blog-encrypt -->
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-Diagram"><span class="nav-number">2.</span> <span class="nav-text">Block Diagram</span></a></li></ol>
+        
     </div>
 </div>
 
@@ -536,7 +547,7 @@
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
         <!-- use hexo-blog-encrypt -->
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definitions"><span class="nav-number">1.</span> <span class="nav-text">Definitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Block-Diagram"><span class="nav-number">2.</span> <span class="nav-text">Block Diagram</span></a></li></ol>
+        
     </div>
 </div>
 
