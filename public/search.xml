@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Building OpenBMC Firmware</title>
+    <url>/2024/07/04/BuildOpenBMCFirmware/</url>
+    <content><![CDATA[<h2 id="1-Setting-up-the-Yocto-build-environment"><a href="#1-Setting-up-the-Yocto-build-environment" class="headerlink" title="1. Setting up the Yocto build environment"></a>1. Setting up the Yocto build environment</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt install git python3-distutils gcc g++ make file wget gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-1-Fork-the-upstream-OpenBMC-repo-to-yours"><a href="#1-1-Fork-the-upstream-OpenBMC-repo-to-yours" class="headerlink" title="1.1 Fork the upstream OpenBMC repo to yours"></a>1.1 Fork the upstream OpenBMC repo to yours</h3><p><a class="link"   href="https://github.com/openbmc/openbmc" >https://github.com/openbmc/openbmc<i class="fas fa-external-link-alt"></i></a> -&gt; <a class="link"   href="https://github.com/kkraman02/openbmc" >https://github.com/kkraman02/openbmc<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>Pull the forked repo in your Ubuntu system.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -v https://github.com/kkraman02/openbmc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> openbmc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Check the available branches remote and local</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -all</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="2-Build-OpenBMC-Firmware-for-the-AST-2500-EVB-board"><a href="#2-Build-OpenBMC-Firmware-for-the-AST-2500-EVB-board" class="headerlink" title="2. Build OpenBMC Firmware for the AST-2500 EVB board"></a>2. Build OpenBMC Firmware for the AST-2500 EVB board</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">. setup evb-ast2500</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bitbake obmc-phosphor-image</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Once, the build is completed you can see the image in the following path <code>/openbmc/build/evb-ast2500/tmp/deploy/images/evb-ast2500</code></p>
+</li>
+<li><p>Check the file size</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lh obmc-phosphor-image-evb-ast2500*</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="3-Build-OpenBMC-Firmware-for-the-ADLINK-board"><a href="#3-Build-OpenBMC-Firmware-for-the-ADLINK-board" class="headerlink" title="3. Build OpenBMC Firmware for the ADLINK board"></a>3. Build OpenBMC Firmware for the ADLINK board</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout -b development</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin development</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir meta-adlink</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> -rv meta-aspeed/* meta-adlink/</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+  </entry>
+  <entry>
     <title>Changing Ownership in Linux</title>
     <url>/2024/06/23/ChangingOwnershipLinux/</url>
     <content><![CDATA[<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;directory_path&gt;</span><br><span class="line">sudo <span class="built_in">chown</span> -R raman:raman .</span><br><span class="line">sudo <span class="built_in">chown</span> -R a+rwX .</span><br></pre></td></tr></table></figure>
