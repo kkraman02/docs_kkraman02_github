@@ -270,7 +270,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sun Jun 23 2024 01:39:54 GMT+0800">2024-06-23 01:39:54</span>
+                <span class="datetime" data-updated="Tue Jul 02 2024 16:25:08 GMT+0800">2024-07-02 16:25:08</span>
             </span>
         
 
@@ -299,8 +299,25 @@
                 <div class="post-content keep-markdown-body">
                     
 
-                    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;directory_path&gt;</span><br><span class="line">sudo <span class="built_in">chown</span> -R raman:raman .</span><br><span class="line">sudo <span class="built_in">chown</span> -R a+rwX .</span><br></pre></td></tr></table></figure>
+                    <p>chown, full name change owner, is a very useful command in Linux systems, mainly used to change the permissions of files or directories.</p>
+<p> Let’s take a look at how to use it and some common options:</p>
+<p>Basic syntax</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> [options] [user:group] file(or)directory </span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>-v, –verbose: Display the instruction execution process.</li>
+<li>-R, –recursive: Process recursively, processing all files and subdirectories in the specified directory together.</li>
+</ul>
+<p>Here is an example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;directory_path&gt;</span><br><span class="line">sudo <span class="built_in">chown</span> -Rv raman:raman .</span><br><span class="line">sudo <span class="built_in">chown</span> -Rv a+rwX .</span><br></pre></td></tr></table></figure>
+
+<p><code>sudo</code>: Runs the command with superuser (administrator) privileges.</p>
+<p><code>chown</code>: Stands for “change owner”, which changes the owner of files and directories.</p>
+<p><code>-R</code>: Recursive option, applies the command to all files and directories within the specified directory.</p>
+<p><code>-v</code>: Verbose mode, which outputs more information about the files and directories being changed.</p>
+<p><code>a</code>: Represents all users.</p>
+<p><code>+rwX</code>: Specifies the permissions to grant: <code>rw</code> for read and write permissions on files, and <code>X</code> for execute permissions on directories.</p>
+<p><code>.</code>: Represents the current directory.</p>
 
                 </div>
                 
@@ -322,14 +339,23 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
+<<<<<<< HEAD
                                    href="../../../07/04/BuildOpenBMCFirmware/"
                                    title="Building OpenBMC Firmware"
+=======
+                                   href="../../../07/02/CreatingPostHexo/"
+                                   title="Creating a Post in Hexo"
+>>>>>>> fc251a60ad8f336688bd1716833faed855e4c0a5
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
+<<<<<<< HEAD
                                         <span class="post-nav-title-item text-ellipsis">Building OpenBMC Firmware</span>
+=======
+                                        <span class="post-nav-title-item text-ellipsis">Creating a Post in Hexo</span>
+>>>>>>> fc251a60ad8f336688bd1716833faed855e4c0a5
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
