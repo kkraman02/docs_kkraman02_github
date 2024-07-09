@@ -1,5 +1,62 @@
 # Changelog
 
+## [4.1.5](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.4...v4.1.5) (2024-07-05)
+
+
+### 🛠 Performance Improvements
+
+* **home:** optimize post updated time settings ([b444efd](https://github.com/XPoet/hexo-theme-keep/commit/b444efd8558835b3149133c8bed7bd34d074995e))
+* **post:** optimize article encryption function ([b189db5](https://github.com/XPoet/hexo-theme-keep/commit/b189db5e7a10d31dd3f132520188ce4d3324ee51))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([27ef552](https://github.com/XPoet/hexo-theme-keep/commit/27ef552086d272df395322ccf181ec6a84eb1e8c))
+
+## [4.1.4](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.3...v4.1.4) (2024-07-03)
+
+
+### 🐞 Bug Fixes
+
+* **code-block:** support diff highlight ([#330](https://github.com/XPoet/hexo-theme-keep/issues/330)) ([6e5aec1](https://github.com/XPoet/hexo-theme-keep/commit/6e5aec13ef732fe48639ac62ccf07fb3a830f216))
+
+
+### 🛠 Performance Improvements
+
+* built-in article encryption function ([54bf474](https://github.com/XPoet/hexo-theme-keep/commit/54bf47499f95ff0a27d54fd494de920f9e0461fd))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([2d1c1c8](https://github.com/XPoet/hexo-theme-keep/commit/2d1c1c88aa91e4fed4fa51fef5b126fbe40daa03))
+
+
+### 💄 Improvement UI
+
+* optimize archive page style ([58aaf7d](https://github.com/XPoet/hexo-theme-keep/commit/58aaf7d0ae636232d7a16c7cf98a1a836f5d9e7d))
+
+## [4.1.3](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.2...v4.1.3) (2024-05-29)
+
+
+### 🛠 Performance Improvements
+
+* **comment:** optimize Twikoo version number matching ([04047da](https://github.com/XPoet/hexo-theme-keep/commit/04047da1033c187fc7b7bdffc16f79bd989e0729))
+* **comment:** optimize Waline version number matching ([a7ec00b](https://github.com/XPoet/hexo-theme-keep/commit/a7ec00b73978415011b17db77ebca12c261a036e))
+* optimize the matching of menu navigation ([0ada7b9](https://github.com/XPoet/hexo-theme-keep/commit/0ada7b9e29ddf614dc4a352006e97b1b874b657a))
+* supports configuring code block shrink for each post ([a187c4a](https://github.com/XPoet/hexo-theme-keep/commit/a187c4a0a88b380d79c8ffe2376cc0976f5d5d83))
+* supports configuring initial theme mode ([#327](https://github.com/XPoet/hexo-theme-keep/issues/327)) ([5e31bef](https://github.com/XPoet/hexo-theme-keep/commit/5e31bef1ac59def3418a49b59ffe170babb3814c))
+
+
+### 🎯 CI
+
+* update ISSUE_TEMPLATE ([60093ea](https://github.com/XPoet/hexo-theme-keep/commit/60093ea2f81d4bd184cea0c9fe1b6b3a6c7e8fa1))
+
+
+### 💄 Improvement UI
+
+* optimize archive page style ([3457acd](https://github.com/XPoet/hexo-theme-keep/commit/3457acd6acdbc9875eef2637412348b761fb8ad6))
+* optimize footer style ([#326](https://github.com/XPoet/hexo-theme-keep/issues/326)) ([1df7acb](https://github.com/XPoet/hexo-theme-keep/commit/1df7acb3ce9df4011687b5a4326a26c7e6b5d825))
+
 ## [4.1.2](https://github.com/XPoet/hexo-theme-keep/compare/v4.1.1...v4.1.2) (2024-05-15)
 
 

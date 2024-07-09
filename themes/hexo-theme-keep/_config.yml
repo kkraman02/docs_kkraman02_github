@@ -36,12 +36,12 @@ base_info:
 menu:
   home: /                        || fa-solid fa-house
   archives: /archives            || fa-solid fa-box-archive
- # tags: /tags                   # || fa-solid fa-tags
- # categories: /categories        || fa-solid fa-layer-group
+  tags: /tags                    || fa-solid fa-tags
+  # categories: /categories        || fa-solid fa-layer-group
   # links: /links               # || fa-solid fa-link
   # photos: /photos             # || fa-solid fa-image
   # tools: /tools               # || fa-solid fa-tools
-  YouTube: https://www.youtube.com/ || fa-brands fa-youtube
+  # YouTube: https://www.youtube.com/ || fa-brands fa-youtube
   GitHub: https://github.com/kkraman02 || fa-brands fa-github
   about: /about                    || fa-solid fa-user-graduate
   # ......
@@ -78,11 +78,11 @@ social_contact:
     # at the same time change your link to the image link.
     # e.g. `weixin: img | ./images/qrcode.png`
     github:           https://github.com/kkraman02
-  #  weixin:          # WeChat
-  #  qq:              # QQ
-  #  weibo:           # WeiBo
-  #  zhihu:           # ZhiHu
-  # twitter:          # Twitter
+    # weixin:          # WeChat
+    # qq:              # QQ
+    # weibo:           # WeiBo
+    # zhihu:           # ZhiHu
+    # twitter:          # Twitter
     x:                 X
     facebook:          Facebook
     email:             kkraman02@gmail.com
@@ -137,21 +137,21 @@ post:
   # Depend on Hexo Plugin: hexo-wordcount (`npm install hexo-wordcount`)
   # See: https://github.com/willin/hexo-wordcount
   word_count:
-    wordcount: false     # Word count, one post. Option values: true | false
-    min2read: false      # Time to read, one post. Option values: true | false
+    wordcount: true     # Word count, one post. Option values: true | false
+    min2read: true      # Time to read, one post. Option values: true | false
 
   # Post datetime
   datetime_format: "YYYY-MM-DD HH:mm:ss"  # Datetime format. e.g. "YYYY-MM-DD HH:mm:ss"
 
   # Post copyright info
-  copyright_info: false  # Option values: true | false
+  copyright_info: true  # Option values: true | false
 
   # Post share
-  share: false           # Option values: true | false
+  share: true           # Option values: true | false
 
   # Reward author
   reward:
-    enable: false        # Option values: true | false
+    enable: true        # Option values: true | false
     img_link:            # Image link for the payment QR code
     text:                # Custom reward text, Can be null
 
@@ -162,7 +162,7 @@ post:
 code_block:
   # Toolbar include: "code copy", "code block collapse" and "code language"
   tools:
-    enable: false            # Option values: true | false
+    enable: true            # Option values: true | false
     style: default           # Option values: default | mac
   highlight_theme: default   # Option values: default | obsidian
 
@@ -174,7 +174,7 @@ toc:
   enable: true      # Option values: true | false
 
   # Automatically add list number to toc
-  number: true      # Option values: true | false
+  number: false      # Option values: true | false
 
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
   expand_all: true  # Option values: true | false
@@ -182,7 +182,7 @@ toc:
   # If true, auto open TOC every time when you enter post page
   init_open: true    # Option values: true | false
 
-  # TOC layout on post page
+  # TOC layout on post pages
   layout: right      # Option values: left | right
 
 
@@ -248,7 +248,7 @@ comment:
   #      https://waline.js.org/guide/get-started.html
   waline:
     server_url:     # Server URL
-    reaction: false # Post reactions, Option values: true | false
+    reaction: true # Post reactions, Option values: true | false
     version: 3      # Waline version, default use v3
 
   # Giscus
@@ -280,21 +280,21 @@ comment:
 # See: https://github.com/hexojs/hexo-generator-feed
 # ---------------------------------------------------------------------------------------
 rss:
-  enable: false  # Option values: true | false
+  enable: true  # Option values: true | false
 
 
 # ---------------------------------------------------------------------------------------
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/lazyload.html
 # ---------------------------------------------------------------------------------------
 lazyload:
-  enable: false  # Option values: true | false
+  enable: true  # Option values: true | false
 
 
 # ---------------------------------------------------------------------------------------
 # Docs: https://keep-docs.xpoet.cn/basis/configuration-guide/cdn.html
 # ---------------------------------------------------------------------------------------
 cdn:
-  enable: false       # Option values: true | false
+  enable: true       # Option values: true | false
   provider: cdnjs     # Option values: cdnjs | jsdelivr | unpkg
 
 
@@ -310,10 +310,10 @@ pjax:
 # ---------------------------------------------------------------------------------------
 footer:
   since: 2020            # The starting year of your website, Can be null
-  word_count: false      # Option values: true | false
+  word_count: true      # Option values: true | false
 
   site_deploy:
-    enable: false        # Option values: true | false
+    enable: true        # Option values: true | false
     provider: github     # Option values: github | vercel | netlify | cloudflare | gitee | aliyun | tencent_cloud | upyun
     url:                 # Your deployment provider url, Can be null
 
