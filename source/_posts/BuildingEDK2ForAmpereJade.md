@@ -18,7 +18,8 @@ tags: EDK2
    You may need to explicitly tell the build system to use the correct cross-compiler. Set the `GCC5_AARCH64_PREFIX` environment variable to point to the AArch64 GCC compiler:
 
    ```sh
-   export GCC5_AARCH64_PREFIX=aarch64-linux-gnu-
+   echo "export GCC5_AARCH64_PREFIX=aarch64-linux-gnu-" >> ~/.bashrc
+   source ~/.bashrc
    ```
 
 
@@ -134,3 +135,46 @@ $ fiptool create --nt-fw-cert /media/raman/development/tianocore/edk2-platforms/
 You need to obtain Ampere ATF image and Board Setting file compatible with this vesion of Ampere EDK2 in order to build a final firmware image.
 
 Contact [developer@amperecomputing.com](mailto:developer@amperecomputing.com) for information.
+
+```sh
+$ git clone https://github.com/ADLINK/AmpereAltra-ATF-SCP
+$ git cp /media/raman/development/tianocore/AmpereAltra-ATF-SCP/atf/* /media/raman/development/tianocore/edk2-platforms/BUILDS/jade_tianocore_atf
+$ git cp /media/raman/development/tianocore/AmpereAltra-ATF-SCP/board_settings/* /media/raman/development/tianocore/edk2-platforms/BUILDS/jade_tianocore_atf
+$ git cp /media/raman/development/tianocore/AmpereAltra-ATF-SCP/scp/* /media/raman/development/tianocore/edk2-platforms/BUILDS/jade_tianocore_atf
+```
+
+
+
+## Build integrated UEFI + Board Setting + ATF image
+
+Generating the final image with the following commands:
+
+```sh
+$ dd bs=1024 count=2048 if=/dev/zero | tr "\000" "\377" > BUILDS/jade_tianocore_atf/jade_tianocore_atf.img
+$ dd bs=1024 conv=notrunc if=BUILDS/jade_tianocore_atf/altra_atf_signed_2.10.20221028.slim of=BUILDS/jade_tianocore_atf/jade_tianocore_atf.img
+$ dd bs=1024 seek=1984 conv=notrunc if=BUILDS/jade_tianocore_atf/jade_board_setting_2.10.20221028.bin of=BUILDS/jade_tianocore_atf/jade_tianocore_atf.img
+$ dd bs=1024 seek=2048 if=BUILDS/jade_tianocore_atf/jade_tianocore.fip.signed of=BUILDS/jade_tianocore_atf/jade_tianocore_atf.img
+```
+
+Build Tianocore Capsule.
+
+```sh
+$ build -a AARCH64 -t GCC5 -b RELEASE -p Platform/Ampere/JadePkg/JadeCapsule.dsc -D UEFI_ATF_IMAGE=BUILDS/jade_tianocore_atf/altra_atf_signed_2.10.20221028.slim -D SCP_IMAGE=BUILDS/jade_tianocore_atf/altra_scp_signed_2.10.20221028.slim
+$ cp /media/raman/development/tianocore/Build/Jade/RELEASE_GCC5/FV/JADEUEFIATFFIRMWAREUPDATECAPSULEFMPPKCS7.Cap BUILDS/jade_tianocore_atf/jade_tianocore_atf.cap
+$ cp /media/raman/development/tianocore/Build/Jade/RELEASE_GCC5/FV/JADESCPFIRMWAREUPDATECAPSULEFMPPKCS7.Cap BUILDS/jade_tianocore_atf/jade_scp.cap
+```
+
+
+
+## Bonus Tip(Automate the build using script)
+
+You can automate the build using the script file from the edk2-ampere-tools.
+
+```sh
+$ sudo apt install efitools gnu-efi
+$ cd /media/raman/development/tianocore/edk2-ampere-tools/efitools
+$ make
+$ cd ~/media/raman/development/tianocore/edk2-ampere-tools
+$ ./edk2-build.sh -b RELEASE Jade --atf-image /media/raman/development/tianocore/edk2-platforms/BUILDS/jade_tianocore_atf/altra_atf_signed_2.10.20221028.slim
+```
+
