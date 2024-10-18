@@ -19,4 +19,4 @@ Terminology in the Yocto Project can be a little confusing. These definitions sh
 
 ### Block Diagram
 
-![](YoctoProjectDevelopment.assets/YoctoBlockDiagram.png)
+![](/images/YoctoProjectDevelopment.assets/YoctoBlockDiagram.png)

@@ -7,7 +7,7 @@ title: Hexo
 subtitle: ''
 description: ''
 keywords:
-author: Kothandaraman Kannadasan
+author: John Doe
 language: en
 timezone: ''
 
@@ -39,9 +39,9 @@ external_link:
   field: site # Apply to the whole site
   exclude: ''
 filename_case: 0
-render_drafts: true
-post_asset_folder: true
-relative_link: true
+render_drafts: false
+post_asset_folder: false
+relative_link: false
 future: true
 syntax_highlighter: highlight.js
 highlight:
@@ -96,8 +96,6 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: landscape
-# theme: hexo-theme-keep-starter
 theme: hexo-theme-keep
 
 # Deployment
