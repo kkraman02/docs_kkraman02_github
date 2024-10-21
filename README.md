@@ -3,7 +3,7 @@
 
 1. Install dependencies:
 
-```
+```sh
 $ git clone https://github.com/kkraman02/docs_kkraman02_github.git
 $ cd docs_kkraman02_github
 $ npm install
@@ -20,12 +20,13 @@ __Note__: If you encounter a permissions error, do not attempt to use `sudo`. In
 
 2. Generate HTML website:
 
-```
+```sh
 $ hexo clean
 $ hexo g
 ```
 
 3. Run server on local side:
 
-```
+```sh
 $ hexo s
+```
