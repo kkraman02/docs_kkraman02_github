@@ -6,7 +6,10 @@
 ```sh
 $ git clone https://github.com/kkraman02/docs_kkraman02_github.git
 $ cd docs_kkraman02_github
-$ npm install
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+$ source ~/.nvm/nvm.sh
+$ nvm install 18
+$ nvm use 18
 $ mkdir ~/.npm-global
 $ npm config set prefix '~/.npm-global'
 $ export PATH=~/.npm-global/bin:$PATH
