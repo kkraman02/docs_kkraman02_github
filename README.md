@@ -10,6 +10,7 @@ $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bas
 $ source ~/.nvm/nvm.sh
 $ nvm install 18
 $ nvm use 18
+$ nvm use --delete-prefix v18.20.5 --silent
 $ mkdir ~/.npm-global
 $ npm config set prefix '~/.npm-global'
 $ export PATH=~/.npm-global/bin:$PATH
