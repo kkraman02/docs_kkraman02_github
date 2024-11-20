@@ -1,7 +1,8 @@
 ---
 title: Bitbake Environment
 date: 2024-06-04 09:10:50
-tags: Bitbake
+categories: Bitbake
+tags: bitbake
 ---
 ## 1. Definition
 

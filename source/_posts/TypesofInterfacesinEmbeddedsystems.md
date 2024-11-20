@@ -1,7 +1,8 @@
 ---
 title: Types of Interfaces in Embedded Systems
 date: 2024-10-18 08:09:23
-tags: Embedded Systems
+categories: Embedded System
+tags: Interfaces
 ---
 
 In embedded systems, the number and types of interfaces available depend on the specific use case and the hardware platform being used. However, here are some common interfaces found in embedded systems:

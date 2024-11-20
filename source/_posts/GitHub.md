@@ -1,6 +1,7 @@
 ---
 title: GitHub
 date: 2024-07-10 22:02:56
+categories: GitHub
 tags: GitHub Commands
 ---
 

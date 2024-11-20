@@ -1,7 +1,8 @@
 ---
 title: Handling GPIO InterruptPins
 date: 2024-10-17 16:13:30
-tags:
+categories: Testing Interfaces
+tags: GPIO
 ---
 
 ## Steps to Read and Configure GPIOs with Interrupts

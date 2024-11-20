@@ -1,5 +1,8 @@
 ---
 title: Yocto Project Development
+date: 2024-08-18 08:09:23
+categories: Yocto
+tags: Yocto
 ---
 
 
