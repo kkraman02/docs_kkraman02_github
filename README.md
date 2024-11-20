@@ -6,10 +6,21 @@
 ```sh
 $ git clone https://github.com/kkraman02/docs_kkraman02_github.git
 $ cd docs_kkraman02_github
-$ npm install
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+$ source ~/.nvm/nvm.sh
+$ nvm install 18
+$ nvm use 18
+$ nvm use --delete-prefix v18.20.5 --silent
 $ mkdir ~/.npm-global
 $ npm config set prefix '~/.npm-global'
 $ export PATH=~/.npm-global/bin:$PATH
+```
+```sh
+$ sudo nano ~/.bashrc
+$ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+$ nvm alias default 18
 $ source ~/.bashrc
 $ npm install hexo-cli -g
 $ npm install hexo-tag-bootstrap 
