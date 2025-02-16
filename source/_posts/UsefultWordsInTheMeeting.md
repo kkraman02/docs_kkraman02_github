@@ -27,25 +27,31 @@ As a beginner, we all get stuck while talking in the meeting in our office or wi
 - I'd like to hear your thoughts on [specific issue/proposal].
 - What challenges are we currently facing, and how address them?
 
-## 3. Managing the time and focus
+## 3. Investigation
+
+- Why did it take so long?
+- Don't say the excuses.
+- 
+
+## 4. Managing the time and focus
 
 - We're running out of time, so let's move to the next item.
 - Let's assign this issue to [person].
 
-## 4. Resolving conflicts and encouraging participations
+## 5. Resolving conflicts and encouraging participations
 
 - Does anyone else have input on this?
 - Thank you for your suggestion. Let's see how it aligns with our goals.
 - Can we compromise by doing [suggest solution]?
 
-## 5. Closing the meeting
+## 6. Closing the meeting
 
 - To summarize, here's what we've decided: [recap key points or decisions].
 - Does anyone have any final questions or concerns before we wrap up?
 - Thank you, everyone, for your time and contributions today.
 - Our next meeting is scheduled for [date/time].
 
-## 6. Following up
+## 7. Following up
 
 - I'll send out the meeting minutes and action items shortly.
 - Feel free to reach out if you have doubts/inputs after the meeting.

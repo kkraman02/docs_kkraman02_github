@@ -16,5 +16,9 @@ Sample sentence.
 
 This is a <span style="color: blue;">blue</span> word.
 
+> [!TIP]
+>
+> 
+
 
 
