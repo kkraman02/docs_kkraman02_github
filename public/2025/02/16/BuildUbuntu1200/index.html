@@ -9,6 +9,8 @@
     
     <title>
         
+            Build Ubuntu OS for LEC-MTK-1200 |
+        
         Raman&#39;s Hub
     </title>
     
@@ -285,7 +287,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        
+                        Build Ubuntu OS for LEC-MTK-1200
                     </div>
                 
 
@@ -313,17 +315,35 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-02-13 14:41:30</span>
+                <span class="datetime">2025-02-16 15:39:58</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Feb 13 2025 14:53:16 GMT+0800">2025-02-13 14:53:16</span>
+                <span class="datetime" data-updated="Sun Feb 16 2025 15:39:58 GMT+0800">2025-02-16 15:39:58</span>
             </span>
         
 
         
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/MTK-1200/">MTK-1200</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
 
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/MTK-1200/">MTK-1200</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
@@ -344,20 +364,60 @@
                     
 
                     
-                         <link rel="stylesheet" type="text/css" href="custom.css">
+                         <h2 id="Download-Ubuntu-OS-Images-and-Boot-Firmware"><a href="#Download-Ubuntu-OS-Images-and-Boot-Firmware" class="headerlink" title="Download Ubuntu OS Images and Boot Firmware"></a>Download Ubuntu OS Images and Boot Firmware</h2><p>Visit <a class="link"   target="_blank" rel="noopener" href="https://ubuntu.com/download/mediatek-genio" >https://ubuntu.com/download/mediatek-genio<i class="fas fa-external-link-alt"></i></a> and download the following two archives to your host PC:</p>
+<blockquote>
+<ul>
+<li>The Ubuntu OS image (Desktop or Server) of your choice. The following steps apply to both Ubuntu Desktop and Ubuntu Server.</li>
+<li>The boot firmware for your Genio EVK</li>
+</ul>
+</blockquote>
+<p>Extract the Ubuntu image first, and then extract the boot firmware into the same directory. On Ubuntu host PC this can be done with the following commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br></pre></td></tr></table></figure>
 
-<h2>How to Build (Yocto/U-Boot)</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xJvf genio-classic-desktop-2204-x01-20231005-133.tar.xz</span><br></pre></td></tr></table></figure>
 
-<div class="button-container">
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/yocto-source"  class="button">Build Yocto from source code<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/bootloader-source"  class="button">Build bootloader from source code<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/sema"  class="button">Build with SEMA<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/ml-dl"  class="button">Build with ML/DL<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/flashing-yocto"  class="button">Flashing Yocto binary<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/flashing-bootloader"  class="button">Flashing bootloader binary<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/secure-boot"  class="button">Enable secure boot<i class="fas fa-external-link-alt"></i></a>
-    <a class="link"   target="_blank" rel="noopener" href="https://your-link.com/yocto-errors"  class="button">Yocto common build errors<i class="fas fa-external-link-alt"></i></a>
-</div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf ubuntu-boot-firmware-genio-1200-evk-v23.1.3.tar.gz</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ubuntu_adlink_mtk</span><br></pre></td></tr></table></figure>
+
+<p>Copy the following files from the Yocto image to the ubuntu_adlink_mtk.</p>
+<ul>
+<li><p>bl2.img</p>
+</li>
+<li><p>bootassets.vfat</p>
+</li>
+<li><p>fip-mt8195.bin -&gt; rename it as fip.bin</p>
+</li>
+<li><p>lk.bin</p>
+</li>
+<li><p>u-boot-env.bin</p>
+</li>
+<li><p>u-boot-initial-env-lec-mtk-i1200-ufs-2022.10+gitAUTOINC+c58839fb0a-r0 -&gt; rename it as u-boot-initial-env</p>
+</li>
+</ul>
+<p>Copy the following files from baoshan-classic-desktop-xxxx to ubuntu_adlink_mtk</p>
+<ul>
+<li><p>ubuntu.img</p>
+</li>
+<li><p>ubuntu.json</p>
+</li>
+<li><p>firmware.vfat</p>
+</li>
+</ul>
+<h2 id="Unzip-the-Firmware-File"><a href="#Unzip-the-Firmware-File" class="headerlink" title="Unzip the Firmware File"></a>Unzip the Firmware File</h2><p>Create a mount point (directory):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> /mnt/vfat</span><br></pre></td></tr></table></figure>
+
+<p>Mount the .vfat file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mount -o loop firmware.vfat /mnt/vfat</span><br></pre></td></tr></table></figure>
+
+<p>This will mount the <code>.vfat</code> image to the <code>/mnt/vfat</code> directory, allowing you to view and modify its contents.</p>
+<p>Create a directory called <code>lec-mtk-i1200-ufs</code> under <code>/mnt/vfat/FIRMWARE/mediatek/</code>.</p>
+<p>Put all the Yocto device tree files (<code>/build/tmp/deploy/images/lec-mtk-1200-ufs/devicetree/</code>) into this directory (<code>/mnt/vfat/FIRMWARE/mediatek/lec-mtk-i1200-ufs/</code>).</p>
+<p>Also, the <code>lec-mtk-i1200-ufs--5.15.42+git0+a46a21ed7e-r0-lec-mtk-i1200-ufs-20241015034349.dtb</code> file and rename it as <code>lec-mtk-i1200-ufs.dtb</code>.</p>
+<h2 id="Repack-Unmount-the-vfat-file"><a href="#Repack-Unmount-the-vfat-file" class="headerlink" title="Repack (Unmount) the .vfat file:"></a>Repack (Unmount) the <code>.vfat</code> file:</h2><p>After modifying the files in the mounted directory, unmount the image and repack it.</p>
+<p>Unmount the <code>.vfat</code> file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> umount /mnt/vfat</span><br></pre></td></tr></table></figure>
+
 
                     
                 </div>
@@ -368,11 +428,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                
+                Build Ubuntu OS for LEC-MTK-1200
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/02/13/TyporaButton/
+                2025/02/16/BuildUbuntu1200/
             </div>
         </div>
 
@@ -388,7 +448,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-02-13 14:41</div>
+                <div class="content">2025-02-16 15:39</div>
             </div>
 
 
@@ -420,6 +480,14 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/MTK-1200/">MTK-1200</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -458,14 +526,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/02/13/How%20to%20Build%20(YoctoU-Boot)/"
-                                   title=""
+                                   href="/2025/02/16/CreatingPostHexo/"
+                                   title="Creating a Post in Hexo"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis"></span>
+                                        <span class="post-nav-title-item text-ellipsis">Creating a Post in Hexo</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -507,7 +575,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">How to Build (Yocto&#x2F;U-Boot)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Ubuntu-OS-Images-and-Boot-Firmware"><span class="nav-text">Download Ubuntu OS Images and Boot Firmware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unzip-the-Firmware-File"><span class="nav-text">Unzip the Firmware File</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repack-Unmount-the-vfat-file"><span class="nav-text">Repack (Unmount) the .vfat file:</span></a></li></ol>
     </div>
 </div>
 
@@ -638,7 +706,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-text">How to Build (Yocto&#x2F;U-Boot)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Download-Ubuntu-OS-Images-and-Boot-Firmware"><span class="nav-text">Download Ubuntu OS Images and Boot Firmware</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unzip-the-Firmware-File"><span class="nav-text">Unzip the Firmware File</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repack-Unmount-the-vfat-file"><span class="nav-text">Repack (Unmount) the .vfat file:</span></a></li></ol>
     </div>
 </div>
 
@@ -721,6 +789,13 @@
 </div>
 
 <!-- mermaid -->
+
+    
+<script src="//cdn.jsdelivr.net/npm/mermaid@7.1.2/dist/mermaid.min.js"></script>
+
+
+
+
 
 
 <!-- pjax -->
