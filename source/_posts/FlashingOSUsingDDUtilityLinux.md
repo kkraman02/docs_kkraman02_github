@@ -1,6 +1,8 @@
 ---
 title: Flashing OS Using DD Utility in Linux
 date: 2024-06-23 01:06:14
+category: Yocto
+tag: Linux Commands
 ---
 
 ## 1. Formatting the USB stick

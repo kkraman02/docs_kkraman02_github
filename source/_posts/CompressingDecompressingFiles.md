@@ -2,7 +2,7 @@
 title: File Compression and Decompression in Embedded Linux Development 🚀🔧📦
 date: 2025-02-16 16:23:52
 categories: File Compression & Decompression
-tags: File Compression & Decompression
+tags: Linux Commands
 ---
 
 File compression is a crucial aspect of embedded development, helping to reduce storage footprints and optimize performance. Various compression methods are available, each offering different levels of speed, efficiency, and compression ratios. 🎯📉💾

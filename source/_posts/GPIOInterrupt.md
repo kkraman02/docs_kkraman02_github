@@ -1,8 +1,8 @@
 ---
 title: GPIO Interrupt
 date: 2024-10-17 15:53:33
-categories: Testing Interfaces
-tags: GPIO
+categories: Embedded System
+tags: Interfaces
 ---
 
 ## How GPIO Interrupts Work

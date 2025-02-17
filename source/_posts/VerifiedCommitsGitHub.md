@@ -2,7 +2,7 @@
 title: Verified Commits in the GitHub
 date: 2024-07-10 22:09:24
 categories: GitHub
-tags: verfied commits
+tags: GitHub Commands
 ---
 
 

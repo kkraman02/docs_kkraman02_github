@@ -1,8 +1,8 @@
 ---
 title: Handling GPIO InterruptPins
 date: 2024-10-17 16:13:30
-categories: Testing Interfaces
-tags: GPIO
+categories: Testing Embedded System Interfaces
+tags: Linux Commands
 ---
 
 ## Steps to Read and Configure GPIOs with Interrupts
