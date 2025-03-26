@@ -9,7 +9,7 @@
     
     <title>
         
-            Docker |
+            Mount and Unmount a .wic Yocto File in Ubuntu |
         
         Raman&#39;s Hub
     </title>
@@ -287,7 +287,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Docker
+                        Mount and Unmount a .wic Yocto File in Ubuntu
                     </div>
                 
 
@@ -315,12 +315,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-01-24 16:24:20</span>
+                <span class="datetime">2025-02-17 11:00:00</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Mon Feb 17 2025 11:21:19 GMT+0800">2025-02-17 11:21:19</span>
+                <span class="datetime" data-updated="Mon Feb 17 2025 11:18:01 GMT+0800">2025-02-17 11:18:01</span>
             </span>
         
 
@@ -328,7 +328,7 @@
             <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul class="post-category-ul">
                     
-                            <li class="category-item"><a href="/categories/Docker/">Docker</a></li>
+                            <li class="category-item"><a href="/categories/Yocto/">Yocto</a></li>
                         
                     
                 </ul>
@@ -364,53 +364,41 @@
                     
 
                     
-                         <h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>Docker is an open-source platfom used to build, test and deploy the work accorss the teams. It used to create the image with necessary libraries and run them on the containers.</p>
-<ul>
-<li><p>Docker Hub</p>
-</li>
-<li><p>Docker Image</p>
-</li>
-<li><p>Docker Container</p>
-</li>
-<li><p>Docker Registry</p>
-</li>
-<li><p>Docker Compose</p>
-</li>
-</ul>
-<div style="display: flex; justify-content: center;">
-    <img     src="/images/Docker.assets/Docker1.png"   style="zoom: 30%;" >
-</div>
+                         <p>When building a Yocto BSP for NXP products, the generated image file is in <strong>.wic</strong> format. Sharing this image with others can be a hassle because they need to flash it onto an SD card just to inspect its contents. Instead, we can mount the <code>.wic</code> file directly on our system without flashing.</p>
+<h2 id="1-Mounting-a-wic-File"><a href="#1-Mounting-a-wic-File" class="headerlink" title="1. Mounting a .wic File"></a>1. Mounting a .wic File</h2><h3 id="Step-1-Attach-the-wic-File-as-a-Loop-Device"><a href="#Step-1-Attach-the-wic-File-as-a-Loop-Device" class="headerlink" title="Step 1: Attach the .wic File as a Loop Device"></a>Step 1: Attach the .wic File as a Loop Device</h3><p>Use <code>losetup</code> to associate the <code>.wic</code> file with a loop device.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> losetup -Pf my-image.wic</span><br></pre></td></tr></table></figure>
 
-<h2 id="1-Installing-Docker"><a href="#1-Installing-Docker" class="headerlink" title="1. Installing Docker"></a>1. Installing Docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update &amp;&amp; <span class="built_in">sudo</span> apt upgrade</span><br><span class="line"><span class="built_in">sudo</span> apt install docker.io</span><br><span class="line">docker --version</span><br></pre></td></tr></table></figure>
+<p>The <code>-P</code> option automatically detects partitions within the image.</p>
+<h3 id="Step-2-Verify-the-Assigned-Loop-Device"><a href="#Step-2-Verify-the-Assigned-Loop-Device" class="headerlink" title="Step 2: Verify the Assigned Loop Device"></a>Step 2: Verify the Assigned Loop Device</h3><p>Check which loop device (<code>/dev/loopX</code>) has been assigned:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> losetup -a</span><br></pre></td></tr></table></figure>
 
+<p>This will list all loop devices. If your <code>.wic</code> file has multiple partitions, they will be labeled as <code>/dev/loopXp1</code>, <code>/dev/loopXp2</code>, etc.</p>
+<h3 id="Step-3-Identify-Partitions-in-the-wic-File"><a href="#Step-3-Identify-Partitions-in-the-wic-File" class="headerlink" title="Step 3: Identify Partitions in the .wic File"></a>Step 3: Identify Partitions in the .wic File</h3><p>To see the partitions inside the <code>.wic</code> image, run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> fdisk -l /dev/loopX</span><br></pre></td></tr></table></figure>
 
+<p>This will list partition details such as their sizes and offsets.</p>
+<h3 id="Step-4-Mount-the-Partitions"><a href="#Step-4-Mount-the-Partitions" class="headerlink" title="Step 4: Mount the Partitions"></a>Step 4: Mount the Partitions</h3><p>Mount the partitions manually:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> mount /dev/loopXp1 /mnt/wic-rootfs</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-Basic-Docker-Commands"><a href="#2-Basic-Docker-Commands" class="headerlink" title="2. Basic Docker Commands"></a>2. Basic Docker Commands</h2><h3 id="Pull-an-image-from-docker-hub"><a href="#Pull-an-image-from-docker-hub" class="headerlink" title="Pull an image from docker hub"></a>Pull an image from docker hub</h3><p>Docker images are templates for containers. Pull an image from Docker Hub (a public registry):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull</span><br></pre></td></tr></table></figure>
+<p>Change <code>/dev/loopXp1</code> to the actual partition you need to inspect.</p>
+<hr>
+<h2 id="2-Unmounting-a-wic-File"><a href="#2-Unmounting-a-wic-File" class="headerlink" title="2. Unmounting a .wic File"></a>2. Unmounting a .wic File</h2><h3 id="Step-1-Find-Mounted-Partitions"><a href="#Step-1-Find-Mounted-Partitions" class="headerlink" title="Step 1: Find Mounted Partitions"></a>Step 1: Find Mounted Partitions</h3><p>Identify mounted partitions related to the <code>.wic</code> file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount | grep loop</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull &lt;image-name&gt;</span><br><span class="line"><span class="comment"># ex: docker pull ubuntu:20.04</span></span><br></pre></td></tr></table></figure>
+<h3 id="Step-2-Unmount-Partitions"><a href="#Step-2-Unmount-Partitions" class="headerlink" title="Step 2: Unmount Partitions"></a>Step 2: Unmount Partitions</h3><p>Unmount each mounted partition:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> umount /mnt/wic-rootfs</span><br></pre></td></tr></table></figure>
 
-<h3 id="Run-a-container"><a href="#Run-a-container" class="headerlink" title="Run a container"></a>Run a container</h3><p>Start a container from an image:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run &lt;image-name&gt;</span><br></pre></td></tr></table></figure>
+<p>Or if multiple partitions were mounted, unmount them one by one.</p>
+<h3 id="Step-3-Detach-the-Loop-Device"><a href="#Step-3-Detach-the-Loop-Device" class="headerlink" title="Step 3: Detach the Loop Device"></a>Step 3: Detach the Loop Device</h3><p>Once all partitions are unmounted, remove the loop device association:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> losetup -d /dev/loopX</span><br></pre></td></tr></table></figure>
 
-<p>To run in detached mode (in the background), use the -d flag:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d &lt;image-name&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="3-Verify-Removal"><a href="#3-Verify-Removal" class="headerlink" title="3. Verify Removal"></a>3. Verify Removal</h2><p>Ensure the loop device is no longer active:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">losetup -a</span><br></pre></td></tr></table></figure>
 
-<h3 id="List-running-containers"><a href="#List-running-containers" class="headerlink" title="List running containers"></a>List running containers</h3><p>View all running containers:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
-
-<p>To see all containers (including stopped ones):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="Stop-a-container"><a href="#Stop-a-container" class="headerlink" title="Stop a container"></a>Stop a container</h3><p>Stop a running container:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;container-id&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Remove-a-Container"><a href="#Remove-a-Container" class="headerlink" title="Remove a Container"></a>Remove a Container</h3><p>Delete a stopped container:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> &lt;container-id&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Remove-an-Image"><a href="#Remove-an-Image" class="headerlink" title="Remove an Image"></a>Remove an Image</h3><p>Delete an image:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi &lt;image-name&gt;</span><br></pre></td></tr></table></figure>
-
+<p>If <code>/dev/loopX</code> is no longer listed, the <code>.wic</code> file has been successfully detached.</p>
+<hr>
+<p>Now you can inspect <code>.wic</code> files without needing to flash them onto an SD card!</p>
 
                     
                 </div>
@@ -421,11 +409,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                Docker
+                Mount and Unmount a .wic Yocto File in Ubuntu
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/01/24/Docker/
+                2025/02/17/MountUnmount(.wic) File/
             </div>
         </div>
 
@@ -441,7 +429,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-01-24 16:24</div>
+                <div class="content">2025-02-17 11:00</div>
             </div>
 
 
@@ -519,14 +507,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/02/05/UsefultWordsInTheMeeting/"
-                                   title="Useful Words in the Meeting"
+                                   href="/2025/03/13/GitReviewPR/"
+                                   title="GitHub Pull-Request Review"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Useful Words in the Meeting</span>
+                                        <span class="post-nav-title-item text-ellipsis">GitHub Pull-Request Review</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -536,11 +524,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/01/22/PowerStates/"
-                                   title="CPU Power States"
+                                   href="/2025/02/16/CompressingDecompressingFiles/"
+                                   title="File Compression and Decompression in Embedded Linux Development 🚀🔧📦"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">CPU Power States</span>
+                                        <span class="post-nav-title-item text-ellipsis">File Compression and Decompression in Embedded Linux Development 🚀🔧📦</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -553,14 +541,6 @@
                 
 
                 
-                    
-
-
-
-
-
-
-                
             </div>
         </div>
 
@@ -568,7 +548,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Installing-Docker"><span class="nav-text">1. Installing Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Basic-Docker-Commands"><span class="nav-text">2. Basic Docker Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull-an-image-from-docker-hub"><span class="nav-text">Pull an image from docker hub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-a-container"><span class="nav-text">Run a container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-running-containers"><span class="nav-text">List running containers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stop-a-container"><span class="nav-text">Stop a container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-a-Container"><span class="nav-text">Remove a Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-an-Image"><span class="nav-text">Remove an Image</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Mounting-a-wic-File"><span class="nav-text">1. Mounting a .wic File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Attach-the-wic-File-as-a-Loop-Device"><span class="nav-text">Step 1: Attach the .wic File as a Loop Device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Verify-the-Assigned-Loop-Device"><span class="nav-text">Step 2: Verify the Assigned Loop Device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-Identify-Partitions-in-the-wic-File"><span class="nav-text">Step 3: Identify Partitions in the .wic File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4-Mount-the-Partitions"><span class="nav-text">Step 4: Mount the Partitions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Unmounting-a-wic-File"><span class="nav-text">2. Unmounting a .wic File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Find-Mounted-Partitions"><span class="nav-text">Step 1: Find Mounted Partitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Unmount-Partitions"><span class="nav-text">Step 2: Unmount Partitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-Detach-the-Loop-Device"><span class="nav-text">Step 3: Detach the Loop Device</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Verify-Removal"><span class="nav-text">3. Verify Removal</span></a></li></ol>
     </div>
 </div>
 
@@ -699,7 +679,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Installing-Docker"><span class="nav-text">1. Installing Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Basic-Docker-Commands"><span class="nav-text">2. Basic Docker Commands</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pull-an-image-from-docker-hub"><span class="nav-text">Pull an image from docker hub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-a-container"><span class="nav-text">Run a container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List-running-containers"><span class="nav-text">List running containers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stop-a-container"><span class="nav-text">Stop a container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-a-Container"><span class="nav-text">Remove a Container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Remove-an-Image"><span class="nav-text">Remove an Image</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Mounting-a-wic-File"><span class="nav-text">1. Mounting a .wic File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Attach-the-wic-File-as-a-Loop-Device"><span class="nav-text">Step 1: Attach the .wic File as a Loop Device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Verify-the-Assigned-Loop-Device"><span class="nav-text">Step 2: Verify the Assigned Loop Device</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-Identify-Partitions-in-the-wic-File"><span class="nav-text">Step 3: Identify Partitions in the .wic File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-4-Mount-the-Partitions"><span class="nav-text">Step 4: Mount the Partitions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Unmounting-a-wic-File"><span class="nav-text">2. Unmounting a .wic File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Find-Mounted-Partitions"><span class="nav-text">Step 1: Find Mounted Partitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-Unmount-Partitions"><span class="nav-text">Step 2: Unmount Partitions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-3-Detach-the-Loop-Device"><span class="nav-text">Step 3: Detach the Loop Device</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Verify-Removal"><span class="nav-text">3. Verify Removal</span></a></li></ol>
     </div>
 </div>
 
