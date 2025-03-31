@@ -7,7 +7,7 @@ tags: Linux Commands
 
 ## Steps to Read and Configure GPIOs with Interrupts
 
-### 1. Access GPIO Pins via `sysfs` Interface
+### 1. Access GPIO Pins via sysfs Interface
 
 In Linux, the **sysfs** interface allows access to GPIO pins. The following steps will help you list and configure GPIOs.
 
