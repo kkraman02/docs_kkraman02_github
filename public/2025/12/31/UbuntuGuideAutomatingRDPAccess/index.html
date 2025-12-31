@@ -9,7 +9,7 @@
     
     <title>
         
-            Understanding Memory in Embedded Systems and IoT Devices 🚀📱💾 |
+            A Guide Automating Remote Desktop Access by Bypassing Keyring Prompts in Ubuntu |
         
         Raman&#39;s Hub
     </title>
@@ -287,7 +287,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Understanding Memory in Embedded Systems and IoT Devices 🚀📱💾
+                        A Guide Automating Remote Desktop Access by Bypassing Keyring Prompts in Ubuntu
                     </div>
                 
 
@@ -315,12 +315,12 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-02-16 15:55:50</span>
+                <span class="datetime">2025-12-31 11:24:26</span>
             </span>
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Fri Dec 05 2025 20:52:07 GMT+0800">2025-12-05 20:52:07</span>
+                <span class="datetime" data-updated="Wed Dec 31 2025 16:52:37 GMT+0800">2025-12-31 16:52:37</span>
             </span>
         
 
@@ -328,7 +328,7 @@
             <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
                 <ul class="post-category-ul">
                     
-                            <li class="category-item"><a href="/categories/Memory/">Memory</a></li>
+                            <li class="category-item"><a href="/categories/Remote-Access/">Remote Access</a></li>
                         
                     
                 </ul>
@@ -339,7 +339,7 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Memory/">Memory</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Remote-Access/">Remote Access</a></li>
                         
                     
                 </ul>
@@ -364,86 +364,42 @@
                     
 
                     
-                         <p>Memory plays a crucial role in <strong>embedded boards</strong>, <strong>IoT devices</strong>, and <strong>Computer-on-Modules (CoMs)</strong>. It impacts performance, power efficiency, and overall system reliability. Let’s break down the different types of memory used in these systems in a simple and easy-to-understand way. ⚡🛠️🔍</p>
-<h2 id="1-Volatile-Memory-RAM-Temporary-Storage-🧠⚡💡"><a href="#1-Volatile-Memory-RAM-Temporary-Storage-🧠⚡💡" class="headerlink" title="1. Volatile Memory (RAM - Temporary Storage) 🧠⚡💡"></a>1. Volatile Memory (RAM - Temporary Storage) 🧠⚡💡</h2><p>RAM is used for temporary storage while the system is running. When the power is turned off, the data is lost.</p>
-<h3 id="a-DRAM-Dynamic-RAM"><a href="#a-DRAM-Dynamic-RAM" class="headerlink" title="a. DRAM (Dynamic RAM)"></a>a. DRAM (Dynamic RAM)</h3><ul>
-<li>Acts as the main system memory.</li>
-<li>Needs constant refreshing to keep data.</li>
-<li>Common types:<ul>
-<li><strong>SDRAM</strong> – Works with the processor clock.</li>
-<li><strong>DDR (Double Data Rate) SDRAM</strong> – Found in most modern devices (DDR3, DDR4, DDR5).</li>
-<li><strong>LPDDR (Low Power DDR)</strong> – Used in mobile and IoT devices to save power.</li>
-</ul>
+                         <h2 id="Are-You-Getting-Stuck-With-This-Issue-Don’t-Know-Why-and-How-to-Overcome"><a href="#Are-You-Getting-Stuck-With-This-Issue-Don’t-Know-Why-and-How-to-Overcome" class="headerlink" title="Are You Getting Stuck With This Issue, Don’t Know Why and How to Overcome?"></a>Are You Getting Stuck With This Issue, Don’t Know Why and How to Overcome?</h2><div style="display: flex; flex-direction: column; align-items: center;">
+    <img     src="/images/UbuntuGuideAutomatingRDPAccess.assets/PasswdKeys-1.png"   alt="PasswdKeys-1">
+</div>
+
+
+<p>Ubuntu stores your Remote Desktop (RDP) password in an encrypted “vault” called the Keyring. When Ubuntu boots up—especially if you have Automatic Login enabled—it logs you into the desktop, but it does not unlock your “vault” because you haven’t typed your password yet. Since the vault is locked, the Remote Desktop service cannot “read” your RDP password. It essentially sits in a broken state, and the Windows App on your Mac gets a “Connection Refused” or “Internal Error” because the service isn’t fully authorized yet.</p>
+<h2 id="Let’s-Fix-It-Permanently"><a href="#Let’s-Fix-It-Permanently" class="headerlink" title="Let’s Fix It Permanently"></a>Let’s Fix It Permanently</h2><h3 id="Option-A-Disable-Automatic-Login-Most-Secure"><a href="#Option-A-Disable-Automatic-Login-Most-Secure" class="headerlink" title="Option A: Disable Automatic Login (Most Secure)"></a>Option A: Disable Automatic Login (Most Secure)</h3><div style="display: flex; flex-direction: column; align-items: center;">
+    <img     src="/images/UbuntuGuideAutomatingRDPAccess.assets/PasswdKeys-5.png"   alt="PasswdKeys-1">
+</div>
+
+<ol>
+<li>Go to Settings &gt; Users.</li>
+<li>Click Unlock (top right).</li>
+<li>Toggle Automatic Login to OFF.</li>
+</ol>
+<h3 id="Option-B-Set-a-“Blank”-Password-for-the-Keyring-Most-Convenient-and-Preferred-One"><a href="#Option-B-Set-a-“Blank”-Password-for-the-Keyring-Most-Convenient-and-Preferred-One" class="headerlink" title="Option B: Set a “Blank” Password for the Keyring (Most Convenient and Preferred One)"></a>Option B: Set a “Blank” Password for the Keyring (Most Convenient and Preferred One)</h3><ol>
+<li><p>On Ubuntu, open the app called Passwords and Keys.</p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <img     src="/images/UbuntuGuideAutomatingRDPAccess.assets/PasswdKeys-2.png"   alt="PasswdKeys-1">
+</div>
 </li>
-</ul>
-<h3 id="b-SRAM-Static-RAM"><a href="#b-SRAM-Static-RAM" class="headerlink" title="b. SRAM (Static RAM)"></a>b. SRAM (Static RAM)</h3><ul>
-<li>Faster but more expensive than DRAM.</li>
-<li>Doesn’t need refreshing.</li>
-<li>Used in cache memory and buffering for quick access. 🚀💾🔄</li>
-</ul>
-<h2 id="2-Non-Volatile-Memory-ROM-Permanent-Storage-📦🔋💾"><a href="#2-Non-Volatile-Memory-ROM-Permanent-Storage-📦🔋💾" class="headerlink" title="2. Non-Volatile Memory (ROM - Permanent Storage) 📦🔋💾"></a>2. Non-Volatile Memory (ROM - Permanent Storage) 📦🔋💾</h2><p>Non-volatile memory retains data even when power is off.</p>
-<h3 id="a-NOR-Flash"><a href="#a-NOR-Flash" class="headerlink" title="a. NOR Flash"></a>a. NOR Flash</h3><ul>
-<li>Has fast read speeds.</li>
-<li>Used for storing firmware (BIOS, bootloaders, microcontroller programs). ⚙️📜⚡</li>
-</ul>
-<h3 id="b-NAND-Flash"><a href="#b-NAND-Flash" class="headerlink" title="b. NAND Flash"></a>b. NAND Flash</h3><ul>
-<li>Stores large amounts of data (SD cards, SSDs, eMMC, UFS).</li>
-<li>Common in IoT and embedded devices. 📂💽📡</li>
-</ul>
-<h3 id="c-EEPROM-Electrically-Erasable-Programmable-ROM"><a href="#c-EEPROM-Electrically-Erasable-Programmable-ROM" class="headerlink" title="c. EEPROM (Electrically Erasable Programmable ROM)"></a>c. EEPROM (Electrically Erasable Programmable ROM)</h3><ul>
-<li>Stores small amounts of configuration data.</li>
-<li>Can be rewritten but has limited write cycles. 🔄💡🖊️</li>
-</ul>
-<h3 id="d-Mask-ROM"><a href="#d-Mask-ROM" class="headerlink" title="d. Mask ROM"></a>d. Mask ROM</h3><ul>
-<li>Pre-programmed at the factory.</li>
-<li>Used in low-cost, high-volume devices. 🏭🔧📀</li>
-</ul>
-<h2 id="3-Embedded-Storage-Technologies-💾📱🚀"><a href="#3-Embedded-Storage-Technologies-💾📱🚀" class="headerlink" title="3. Embedded Storage Technologies 💾📱🚀"></a>3. Embedded Storage Technologies 💾📱🚀</h2><h3 id="a-eMMC-Embedded-MultiMediaCard"><a href="#a-eMMC-Embedded-MultiMediaCard" class="headerlink" title="a. eMMC (Embedded MultiMediaCard)"></a>a. eMMC (Embedded MultiMediaCard)</h3><ul>
-<li>Built-in storage for IoT and embedded systems.</li>
-<li>Cheaper than SSDs but slower. 💰🔄💽</li>
-</ul>
-<h3 id="b-UFS-Universal-Flash-Storage"><a href="#b-UFS-Universal-Flash-Storage" class="headerlink" title="b. UFS (Universal Flash Storage)"></a>b. UFS (Universal Flash Storage)</h3><ul>
-<li>Faster than eMMC.</li>
-<li>Used in high-performance mobile and embedded devices. 🚀📂🔋</li>
-</ul>
-<h3 id="c-SSD-Solid-State-Drive"><a href="#c-SSD-Solid-State-Drive" class="headerlink" title="c. SSD (Solid-State Drive)"></a>c. SSD (Solid-State Drive)</h3><ul>
-<li>High-speed storage (NVMe, SATA SSDs).</li>
-<li>Found in industrial and high-performance embedded systems. ⚡💾🔌</li>
-</ul>
-<h3 id="d-MRAM-Magnetoresistive-RAM"><a href="#d-MRAM-Magnetoresistive-RAM" class="headerlink" title="d. MRAM (Magnetoresistive RAM)"></a>d. MRAM (Magnetoresistive RAM)</h3><ul>
-<li>Non-volatile and fast.</li>
-<li>Used for real-time data logging. 📊⚡📡</li>
-</ul>
-<h2 id="4-Specialized-Memory-Types-🎯🛠️🔍"><a href="#4-Specialized-Memory-Types-🎯🛠️🔍" class="headerlink" title="4. Specialized Memory Types 🎯🛠️🔍"></a>4. Specialized Memory Types 🎯🛠️🔍</h2><h3 id="a-NVRAM-Non-Volatile-RAM"><a href="#a-NVRAM-Non-Volatile-RAM" class="headerlink" title="a. NVRAM (Non-Volatile RAM)"></a>a. NVRAM (Non-Volatile RAM)</h3><ul>
-<li>Retains data even after power loss.</li>
-<li>Used in systems that require fast recovery. 🔄⚙️💡</li>
-</ul>
-<h3 id="b-FRAM-Ferroelectric-RAM"><a href="#b-FRAM-Ferroelectric-RAM" class="headerlink" title="b. FRAM (Ferroelectric RAM)"></a>b. FRAM (Ferroelectric RAM)</h3><ul>
-<li>Low power, high-speed memory.</li>
-<li>Used in IoT, automation, and medical devices. 🏥📡⚡</li>
-</ul>
-<h3 id="c-PCM-Phase-Change-Memory"><a href="#c-PCM-Phase-Change-Memory" class="headerlink" title="c. PCM (Phase Change Memory)"></a>c. PCM (Phase Change Memory)</h3><ul>
-<li>Performs like DRAM but retains data.</li>
-<li>Used in advanced AI and IoT applications. 🧠🚀📊</li>
-</ul>
-<h2 id="5-Memory-in-Computer-on-Modules-CoMs-🏗️🔧📦"><a href="#5-Memory-in-Computer-on-Modules-CoMs-🏗️🔧📦" class="headerlink" title="5. Memory in Computer-on-Modules (CoMs) 🏗️🔧📦"></a>5. Memory in Computer-on-Modules (CoMs) 🏗️🔧📦</h2><p>CoMs integrate a processor with different types of memory for various applications.</p>
-<ul>
-<li><strong>RAM:</strong> DDR3, DDR4, LPDDR (depending on need).</li>
-<li><strong>Boot Memory:</strong> NOR flash or EEPROM.</li>
-<li><strong>Storage:</strong> eMMC, UFS, or SSD depending on performance requirements. 🔋💾🚀</li>
-</ul>
-<h3 id="Common-CoM-Standards"><a href="#Common-CoM-Standards" class="headerlink" title="Common CoM Standards"></a>Common CoM Standards</h3><ul>
-<li><strong>COM Express</strong></li>
-<li><strong>SMARC</strong></li>
-<li><strong>Qseven</strong></li>
-<li><strong>Raspberry Pi Compute Module</strong></li>
-<li><strong>Jetson Modules (for AI and graphics applications)</strong> 🖥️🤖📡</li>
-</ul>
-<h2 id="Conclusion-🎯📌✅"><a href="#Conclusion-🎯📌✅" class="headerlink" title="Conclusion 🎯📌✅"></a>Conclusion 🎯📌✅</h2><ul>
-<li><strong>Embedded &amp; IoT Devices</strong> rely on low-power memory like <strong>LPDDR, eMMC, and NOR flash</strong>.</li>
-<li><strong>Industrial &amp; High-Performance Systems</strong> use <strong>DDR4, NAND SSDs, and NVMe storage</strong>.</li>
-<li><strong>Computer-on-Modules (CoMs)</strong> have customized memory setups for different needs. ⚡🏗️🔋</li>
-</ul>
+<li><p>Right-click on the folder named <strong>Default keyring</strong> and <strong>Login</strong> (under “Passwords” on the left).</p>
+</li>
+<li><p>Select Change Password.</p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+    <img     src="/images/UbuntuGuideAutomatingRDPAccess.assets/PasswdKeys-3.png"   alt="PasswdKeys-1">
+</div>
+</li>
+<li><p>Enter your Current Password.</p>
+</li>
+<li><p>For the New Password, leave it completely blank and click Continue.</p>
+</li>
+<li><p>Confirm that you want to use “Unsafe Storage.”</p>
+</li>
+</ol>
+<p>Try to connect again, this time you will definitely will get rid of that issue.</p>
 
                     
                 </div>
@@ -454,11 +410,11 @@
     <div class="copyright-info-content border-box">
         <div class="copyright-info-top border-box">
             <div class="copyright-post-title border-box text-ellipsis">
-                Understanding Memory in Embedded Systems and IoT Devices 🚀📱💾
+                A Guide Automating Remote Desktop Access by Bypassing Keyring Prompts in Ubuntu
             </div>
 
             <div class="copyright-post-link border-box text-ellipsis">
-                2025/02/16/MemoryEmbeddedSystemsIoTDevices/
+                2025/12/31/UbuntuGuideAutomatingRDPAccess/
             </div>
         </div>
 
@@ -474,7 +430,7 @@
                 <div class="type">
                     Published
                 </div>
-                <div class="content">2025-02-16 15:55</div>
+                <div class="content">2025-12-31 11:24</div>
             </div>
 
 
@@ -510,7 +466,7 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Memory/">Memory</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Remote-Access/">Remote Access</a>
                                     </li>
                                 
                             </ul>
@@ -552,14 +508,14 @@
                             <div class="prev-post">
                                 <a class="prev"
                                    rel="prev"
-                                   href="/2025/02/16/CompressingDecompressingFiles/"
-                                   title="File Compression and Decompression in Embedded Linux Development 🚀🔧📦"
+                                   href="/2025/12/31/RemotelyAccessingOfficePCfromHomePC/"
+                                   title="Remotely Accessing Office PC from Home PC Using Tailscale"
                                 >
                                     <span class="left arrow-icon flex-center">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">File Compression and Decompression in Embedded Linux Development 🚀🔧📦</span>
+                                        <span class="post-nav-title-item text-ellipsis">Remotely Accessing Office PC from Home PC Using Tailscale</span>
                                         <span class="post-nav-item">Prev posts</span>
                                     </span>
                                 </a>
@@ -569,11 +525,11 @@
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/02/05/SelfIntroInTheMeeting/"
-                                   title="Self Intro in the Meeting"
+                                   href="/2025/12/05/CreatingPostHexo/"
+                                   title="Creating a Post in Hexo"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">Self Intro in the Meeting</span>
+                                        <span class="post-nav-title-item text-ellipsis">Creating a Post in Hexo</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
@@ -601,7 +557,7 @@
             <div class="pc-post-toc right-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Volatile-Memory-RAM-Temporary-Storage-%F0%9F%A7%A0%E2%9A%A1%F0%9F%92%A1"><span class="nav-text">1. Volatile Memory (RAM - Temporary Storage) 🧠⚡💡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-DRAM-Dynamic-RAM"><span class="nav-text">a. DRAM (Dynamic RAM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-SRAM-Static-RAM"><span class="nav-text">b. SRAM (Static RAM)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Non-Volatile-Memory-ROM-Permanent-Storage-%F0%9F%93%A6%F0%9F%94%8B%F0%9F%92%BE"><span class="nav-text">2. Non-Volatile Memory (ROM - Permanent Storage) 📦🔋💾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-NOR-Flash"><span class="nav-text">a. NOR Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-NAND-Flash"><span class="nav-text">b. NAND Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-EEPROM-Electrically-Erasable-Programmable-ROM"><span class="nav-text">c. EEPROM (Electrically Erasable Programmable ROM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-Mask-ROM"><span class="nav-text">d. Mask ROM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Embedded-Storage-Technologies-%F0%9F%92%BE%F0%9F%93%B1%F0%9F%9A%80"><span class="nav-text">3. Embedded Storage Technologies 💾📱🚀</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-eMMC-Embedded-MultiMediaCard"><span class="nav-text">a. eMMC (Embedded MultiMediaCard)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-UFS-Universal-Flash-Storage"><span class="nav-text">b. UFS (Universal Flash Storage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-SSD-Solid-State-Drive"><span class="nav-text">c. SSD (Solid-State Drive)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-MRAM-Magnetoresistive-RAM"><span class="nav-text">d. MRAM (Magnetoresistive RAM)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Specialized-Memory-Types-%F0%9F%8E%AF%F0%9F%9B%A0%EF%B8%8F%F0%9F%94%8D"><span class="nav-text">4. Specialized Memory Types 🎯🛠️🔍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-NVRAM-Non-Volatile-RAM"><span class="nav-text">a. NVRAM (Non-Volatile RAM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-FRAM-Ferroelectric-RAM"><span class="nav-text">b. FRAM (Ferroelectric RAM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-PCM-Phase-Change-Memory"><span class="nav-text">c. PCM (Phase Change Memory)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Memory-in-Computer-on-Modules-CoMs-%F0%9F%8F%97%EF%B8%8F%F0%9F%94%A7%F0%9F%93%A6"><span class="nav-text">5. Memory in Computer-on-Modules (CoMs) 🏗️🔧📦</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-CoM-Standards"><span class="nav-text">Common CoM Standards</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion-%F0%9F%8E%AF%F0%9F%93%8C%E2%9C%85"><span class="nav-text">Conclusion 🎯📌✅</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Are-You-Getting-Stuck-With-This-Issue-Don%E2%80%99t-Know-Why-and-How-to-Overcome"><span class="nav-text">Are You Getting Stuck With This Issue, Don’t Know Why and How to Overcome?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let%E2%80%99s-Fix-It-Permanently"><span class="nav-text">Let’s Fix It Permanently</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Option-A-Disable-Automatic-Login-Most-Secure"><span class="nav-text">Option A: Disable Automatic Login (Most Secure)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Option-B-Set-a-%E2%80%9CBlank%E2%80%9D-Password-for-the-Keyring-Most-Convenient-and-Preferred-One"><span class="nav-text">Option B: Set a “Blank” Password for the Keyring (Most Convenient and Preferred One)</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -732,7 +688,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Volatile-Memory-RAM-Temporary-Storage-%F0%9F%A7%A0%E2%9A%A1%F0%9F%92%A1"><span class="nav-text">1. Volatile Memory (RAM - Temporary Storage) 🧠⚡💡</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-DRAM-Dynamic-RAM"><span class="nav-text">a. DRAM (Dynamic RAM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-SRAM-Static-RAM"><span class="nav-text">b. SRAM (Static RAM)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Non-Volatile-Memory-ROM-Permanent-Storage-%F0%9F%93%A6%F0%9F%94%8B%F0%9F%92%BE"><span class="nav-text">2. Non-Volatile Memory (ROM - Permanent Storage) 📦🔋💾</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-NOR-Flash"><span class="nav-text">a. NOR Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-NAND-Flash"><span class="nav-text">b. NAND Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-EEPROM-Electrically-Erasable-Programmable-ROM"><span class="nav-text">c. EEPROM (Electrically Erasable Programmable ROM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-Mask-ROM"><span class="nav-text">d. Mask ROM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Embedded-Storage-Technologies-%F0%9F%92%BE%F0%9F%93%B1%F0%9F%9A%80"><span class="nav-text">3. Embedded Storage Technologies 💾📱🚀</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-eMMC-Embedded-MultiMediaCard"><span class="nav-text">a. eMMC (Embedded MultiMediaCard)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-UFS-Universal-Flash-Storage"><span class="nav-text">b. UFS (Universal Flash Storage)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-SSD-Solid-State-Drive"><span class="nav-text">c. SSD (Solid-State Drive)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#d-MRAM-Magnetoresistive-RAM"><span class="nav-text">d. MRAM (Magnetoresistive RAM)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Specialized-Memory-Types-%F0%9F%8E%AF%F0%9F%9B%A0%EF%B8%8F%F0%9F%94%8D"><span class="nav-text">4. Specialized Memory Types 🎯🛠️🔍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-NVRAM-Non-Volatile-RAM"><span class="nav-text">a. NVRAM (Non-Volatile RAM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-FRAM-Ferroelectric-RAM"><span class="nav-text">b. FRAM (Ferroelectric RAM)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#c-PCM-Phase-Change-Memory"><span class="nav-text">c. PCM (Phase Change Memory)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Memory-in-Computer-on-Modules-CoMs-%F0%9F%8F%97%EF%B8%8F%F0%9F%94%A7%F0%9F%93%A6"><span class="nav-text">5. Memory in Computer-on-Modules (CoMs) 🏗️🔧📦</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common-CoM-Standards"><span class="nav-text">Common CoM Standards</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conclusion-%F0%9F%8E%AF%F0%9F%93%8C%E2%9C%85"><span class="nav-text">Conclusion 🎯📌✅</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Are-You-Getting-Stuck-With-This-Issue-Don%E2%80%99t-Know-Why-and-How-to-Overcome"><span class="nav-text">Are You Getting Stuck With This Issue, Don’t Know Why and How to Overcome?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Let%E2%80%99s-Fix-It-Permanently"><span class="nav-text">Let’s Fix It Permanently</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Option-A-Disable-Automatic-Login-Most-Secure"><span class="nav-text">Option A: Disable Automatic Login (Most Secure)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Option-B-Set-a-%E2%80%9CBlank%E2%80%9D-Password-for-the-Keyring-Most-Convenient-and-Preferred-One"><span class="nav-text">Option B: Set a “Blank” Password for the Keyring (Most Convenient and Preferred One)</span></a></li></ol></li></ol>
     </div>
 </div>
 
