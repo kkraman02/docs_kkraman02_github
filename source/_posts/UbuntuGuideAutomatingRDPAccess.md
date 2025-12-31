@@ -1,7 +1,7 @@
 ---
 title: A Guide Automating Remote Desktop Access by Bypassing Keyring Prompts in Ubuntu
 date: 2026-01-01 10:24:20
-categori6s: Remote Access
+categories: Remote Access
 tags: Remote Access
 ---
 
