@@ -13,7 +13,7 @@ $ nvm use 18
 $ nvm use --delete-prefix v18.20.5 --silent
 $ mkdir ~/.npm-global
 $ npm config set prefix '~/.npm-global'
-$ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.zshrc
+$ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 ```
 ```sh
 $ echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
