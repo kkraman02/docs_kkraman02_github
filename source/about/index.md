@@ -7,7 +7,7 @@ date: 2024-05-26 09:07:32
 
 ### **About Me**
 
-Hello! My name is Kothandaraman Kannadasan, and I am passionate about technology and innovation. Here’s a snapshot of my professional and academic journey:
+Hello! My full name is Kothandaraman Kannadasan. People call me **Raman or Ramen🍜** inshort. I am passionate about technology and innovation. Here’s a snapshot of my professional and academic journey:
 
 ------
 
@@ -19,7 +19,7 @@ Hello! My name is Kothandaraman Kannadasan, and I am passionate about technology
 **Master’s Degree in Computer and Electrical Science Engineering**
 *National Taipei University of Technology (NTUT), Taiwan*
 
-My education has provided me with a robust foundation in mechanical and electrical engineering principles, along with advanced knowledge in computer science.
+My education has provided me with a robust foundation in electrical engineering principles, along with advanced knowledge in computer science.
 
 ------
 
@@ -27,15 +27,25 @@ My education has provided me with a robust foundation in mechanical and electric
 
 **Software Application Engineer (1 year)**
 
-- Developed coding and problem-solving skills.
-- Gained hands-on experience in software development and system integration.
+- Resolved over 100+ customer issues related to BSP, bootloader, and firmware development, improving
+  time-to-market by 20%.
+- Checking all the interface before the product going to the market/launch to ensure smooth operation of the OS.
+- Enriched experience in testing all the SoC supported interfaces such as, Audio, Bluetooth, CAN, CPU, CSI, Ethernet, GPIO, PWM, RTC, SATA, SPI, UART, USB, Video, Watchdog, Wi-FI, and LVDS/eDP/DSI.
+- Benchmarking and preparing the development kits for the Embedded shows/events.
+- Solid knowledge in analyzing the schematics and datasheet.
 
-**Software Product Manager at ADLINK (2 years)**
+**Software Product Manager at ADLINK (3+ years)**
 
-- Overseeing the development and implementation of cutting-edge software products.
-- Bridging the gap between technical teams and business stakeholders.
-- Ensuring products meet market demands and exceed customer expectations.
-- Managed the development of ARM and X86 system projects.
+- Led Taiwan and India software team of 20+ engineers in developing, debugging BSP for various embedded projects
+  and EAPI based SEMA software for embedded device management.
+- Successfully led 10+ development ODM projects and 20+ OEM projects, meeting deadlines and reducing
+  time-to-market by 15%.
+- Ensure timely delivery of releases by coordinating with cross-functional teams. Engage engineers and other teams to
+  identify and remove blockers so progress is smooth and efficient delivery.
+- Effectively handling risk assessment/mitigation, Issues prioritization, Backlog management with the internal
+  stakeholders.
+- Providing support across all the RBU’s for design wins, and assisting AE and FAE team to catch the early stage
+  opportunities.
 
 ------
 
@@ -43,31 +53,23 @@ My education has provided me with a robust foundation in mechanical and electric
 
 **Software Development**
 
-- Proficient in various programming languages.
-- Deep understanding of system architectures (ARM64 and X86).
+- Proficient in various programming languages (embedded C, C++, HTML, CSS)
+- Deep understanding of system architectures (ARM64 and x86).
+- Master it Git.
 
 **Product Lifecycle Management**
 
 - Strategic planning and execution.
 - Efficient project management and team collaboration.
+- Master in Aglie project management platforms.
 
 **Specialized Knowledge**
 
+- Customer realationship and people management.
 - Yocto and U-Boot development.
-- Kernel driver debugging.
-- BMC development (RunBMC and OpenBMC).
-- EDKII and Linux development.
-
-------
-
-### **Key Projects**
-
-- EXFO MTK-1200
-- EXFO NXP-IMX8MP
-- Netflix Ampere Altra
-- OpenBMC for AST2500 with Ampere Altra SoC
-- Express-VR7 based on AMD processor
-- COM-HPC-sIDH based on Intel Xenon processor
+- Kernel debugging.
+- Drafting software licensing to avoid legal issues.
+- ROS(Robotics Operating System).
 
 ------
 
@@ -75,9 +77,8 @@ My education has provided me with a robust foundation in mechanical and electric
 
 Outside of my professional life, I enjoy:
 
-- Playing Cricket
-- Hiking
-- Reading
-- Watching Movies
+- Website creation using open-source platform
+- Playing cricket 🏏
+- Hiking 🥾
 
-I am also enthusiastic about sharing my technical knowledge with others through my YouTube channel, where I create content to help and inspire fellow tech enthusiasts.
+I am also enthusiastic about sharing my technical knowledge with others through this blog site and LinkedIn, where I create content to help and inspire fellow tech enthusiasts.
