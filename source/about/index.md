@@ -1,13 +1,11 @@
 ---
 title: about
-date: 2024-05-26 09:07:32
+date: 2026-03-20 14:43:32
 ---
-
-
 
 ### **About Me**
 
-Hello! My full name is Kothandaraman Kannadasan. People call me **Raman or Ramen🍜** inshort. I am passionate about technology and innovation. Here’s a snapshot of my professional and academic journey:
+Hello! My full name is Kothandaraman Kannadasan. Colleagues prefers to call me **Raman or Ramen🍜** inshort. I am passionate about technology and innovation. Here’s a snapshot of my professional and academic journey:
 
 ------
 
@@ -25,16 +23,7 @@ My education has provided me with a robust foundation in electrical engineering 
 
 ### **Professional Experience**
 
-**Software Application Engineer (1 year)**
-
-- Resolved over 100+ customer issues related to BSP, bootloader, and firmware development, improving
-  time-to-market by 20%.
-- Checking all the interface before the product going to the market/launch to ensure smooth operation of the OS.
-- Enriched experience in testing all the SoC supported interfaces such as, Audio, Bluetooth, CAN, CPU, CSI, Ethernet, GPIO, PWM, RTC, SATA, SPI, UART, USB, Video, Watchdog, Wi-FI, and LVDS/eDP/DSI.
-- Benchmarking and preparing the development kits for the Embedded shows/events.
-- Solid knowledge in analyzing the schematics and datasheet.
-
-**Software Product Manager at ADLINK (3+ years)**
+**Software Product Manager at ADLINK Technology, Inc. (3+ years)**
 
 - Led Taiwan and India software team of 20+ engineers in developing, debugging BSP for various embedded projects
   and EAPI based SEMA software for embedded device management.
@@ -46,6 +35,15 @@ My education has provided me with a robust foundation in electrical engineering 
   stakeholders.
 - Providing support across all the RBU’s for design wins, and assisting AE and FAE team to catch the early stage
   opportunities.
+
+**Software Application Engineer at ADLINK Technology, Inc. (1 year)**
+
+- Resolved over 100+ customer issues related to BSP, bootloader, and firmware development, improving
+  time-to-market by 20%.
+- Checking all the interface before the product going to the market/launch to ensure smooth operation of the OS.
+- Enriched experience in testing all the SoC supported interfaces such as, Audio, Bluetooth, CAN, CPU, CSI, Ethernet, GPIO, PWM, RTC, SATA, SPI, UART, USB, Video, Watchdog, Wi-FI, and LVDS/eDP/DSI.
+- Benchmarking and preparing the development kits for the Embedded shows/events.
+- Solid knowledge in analyzing the schematics and datasheet.
 
 ------
 
@@ -77,7 +75,7 @@ My education has provided me with a robust foundation in electrical engineering 
 
 Outside of my professional life, I enjoy:
 
-- Website creation using open-source platform
+- Website creation using open-source platform 🔭📝
 - Playing cricket 🏏
 - Hiking 🥾
 
