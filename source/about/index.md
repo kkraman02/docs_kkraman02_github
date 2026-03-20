@@ -36,7 +36,7 @@ My education has provided me with a robust foundation in electrical engineering 
 - Providing support across all the RBU’s for design wins, and assisting AE and FAE team to catch the early stage
   opportunities.
 
-**Software Application Engineer at ADLINK Technology, Inc. (1 year)**
+**Senior Application Engineer at ADLINK Technology, Inc. (1 year)**
 
 - Resolved over 100+ customer issues related to BSP, bootloader, and firmware development, improving
   time-to-market by 20%.
